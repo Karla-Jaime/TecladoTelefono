@@ -252,8 +252,11 @@ namespace GraficadorSeñales
                     {
                         indeceMaximo = i;
                     }
+
+
+                     
                 }
-                lblHertz.Text = ((indeceMaximo * frecuenciaMuestreo) / (señal.Muestras.Count)).ToString( "N") + "Hz";
+                lblHertzAlta.Text = ((indeceMaximo * frecuenciaMuestreo) / (señal.Muestras.Count)).ToString( "N") + "Hz";
             }
 
             lblLimiteSuperior.Text =

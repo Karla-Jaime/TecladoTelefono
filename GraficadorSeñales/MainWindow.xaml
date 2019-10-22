@@ -62,7 +62,9 @@
             <ComboBoxItem Content="Señal audio"/>
 
         </ComboBox>
-        <TextBlock x:Name="lblHertz" FontSize="30" HorizontalAlignment="Left" Margin="24,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 Hz"/>
+        <TextBlock x:Name="lblHertzAlta" FontSize="30" HorizontalAlignment="Left" Margin="24,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 Hz"/>
+        <TextBlock x:Name="lblHertzBaja" FontSize="30" HorizontalAlignment="Left" Margin="24,529,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 Hz"/>
+        <TextBlock x:Name="lblNumero" FontSize="26" HorizontalAlignment="Left" Margin="24,573,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0 Hz"/>
 
 
     </Grid>
