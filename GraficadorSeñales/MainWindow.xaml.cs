@@ -244,21 +244,45 @@ namespace GraficadorSeñales
             }
 
             if (cbOperacion.SelectedIndex == 5)
-            {
-                int indeceMaximo = 0;
-                for (int i = 0; i < (señalResultante.Muestras.Count / 2); i++)
+            {   //Ontenemos la frecuencia baja
+                int indiceMaximo = 0;
+                int indiceInicial = (int)((690.0 * (float)(señalResultante.Muestras.Count)) / señalResultante.FrecuenciaMuestreo);
+                int indiceFinal = (int)((950.0 * (float)(señalResultante.Muestras.Count)) / señalResultante.FrecuenciaMuestreo);
+
+                for (int i = indiceInicial; i < (indiceFinal); i++)
                 {
-                    if(señalResultante.Muestras[i].Y > señalResultante.Muestras[indeceMaximo].Y)
+                    if(señalResultante.Muestras[i].Y > señalResultante.Muestras[indiceMaximo].Y)
                     {
-                        indeceMaximo = i;
+                        indiceMaximo = i;
                     }
-
-
-                     
                 }
-                lblHertzAlta.Text = ((indeceMaximo * frecuenciaMuestreo) / (señal.Muestras.Count)).ToString( "N") + "Hz";
-            }
+                lblHertzBaja.Text = ((indiceMaximo * señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count)).ToString( "N") + "Hz";
+                //Obtenemos la frecuenca alta
+                int indiceMaximoAlta = 0;
+                int indiceInicialAlta = ((int)((1200.0 * (float)(señalResultante.Muestras.Count)) / señalResultante.FrecuenciaMuestreo));
+                int indiceFinalAlta = ((int)((1482.0 * (float)(señalResultante.Muestras.Count)) / señalResultante.FrecuenciaMuestreo));
+                 
+                for (int i = indiceInicialAlta; i < indiceFinalAlta; i++)
+                {
+                    if (señalResultante.Muestras[i].Y > señalResultante.Muestras[indiceMaximoAlta].Y)
+                    {
+                        indiceMaximoAlta = i;
+                    }
+                }
+                lblHertzAlta.Text = ((indiceMaximoAlta * señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count)).ToString("N") + "Hz";
 
+                double hertzAlta = ((indiceMaximoAlta * señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count));
+                double hertzBaja = ((indiceMaximo* señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count));
+
+                if (hertzAlta  <=  (697) && hertzBaja <= 1212)
+                {
+                    lblNumero.Text = "1";
+                }
+              
+               
+               
+0            }
+           
             lblLimiteSuperior.Text =
                 amplitudMaxima.ToString("F");
             lblLimiteInferior.Text =
