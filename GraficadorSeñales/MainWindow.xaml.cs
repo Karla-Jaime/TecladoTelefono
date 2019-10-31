@@ -274,14 +274,61 @@ namespace GraficadorSeñales
                 double hertzAlta = ((indiceMaximoAlta * señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count));
                 double hertzBaja = ((indiceMaximo* señalResultante.FrecuenciaMuestreo) / (señal.Muestras.Count));
 
-                if (hertzAlta  <=  (697) && hertzBaja <= 1212)
+                //lblNumero.Text = hertzAlta.ToString("N");
+
+                if ((hertzBaja <= (697.0f)) && (hertzAlta <= 1212.0f))
                 {
                     lblNumero.Text = "1";
                 }
-              
-               
-               
-0            }
+                else if (hertzBaja <= 697.0f && hertzAlta <= 1336.0f)
+                {
+                    lblNumero.Text = "2";
+                }
+                else if (hertzBaja <= 697.0f && hertzAlta <= 1477.0f)
+                {
+                    lblNumero.Text = "3";
+                }
+                else if (hertzBaja <= 770.0f && hertzAlta <= 1209.0f)
+                {
+                    lblNumero.Text = "4";
+                }
+                else
+                    if (hertzBaja <= 770.0f && hertzAlta <= 1336.0f)
+                {
+                    lblNumero.Text = "5";
+                }
+                else  if (hertzBaja <= 770.0f && hertzAlta <= 1477.0f)
+                {
+                    lblNumero.Text = "6";
+                }
+                else if (hertzBaja <= 852.0f && hertzAlta <= 1209.0f)
+                {
+                    lblNumero.Text = "7";
+                }
+                else if (hertzBaja <= 852.0f && hertzAlta <= 1336.0f)
+                {
+                    lblNumero.Text = "8";
+                }
+                else if (hertzBaja <= 852.0f && hertzAlta <= 1477.0f)
+                {
+                    lblNumero.Text = "9";
+                }
+                else if (hertzBaja <= 941.0f && hertzAlta <= 1209.0f)
+                {
+                    lblNumero.Text = "*";
+                }
+                else if (hertzBaja <= 941.0f && hertzAlta <= 1336.0f)
+                {
+                    lblNumero.Text = "0";
+                }
+                else
+                {
+                    lblNumero.Text = "#";
+                }
+
+
+
+            }
            
             lblLimiteSuperior.Text =
                 amplitudMaxima.ToString("F");
